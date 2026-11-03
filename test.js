@@ -1,0 +1,16 @@
+const assert=require("assert");require("./products.js");require("./compat.js");
+const P=PRODUCTS,by=(c,id)=>P[c].find(p=>p.id===id);
+const build=o=>Object.fromEntries(Object.entries(o).map(([c,id])=>[c,by(c,id)]));
+const base={cpu:"r5-5600",motherboard:"gb-b550m",ram:"kf-16-d4",cooler:"ak400",gpu:"rx-7600",psu:"cv650",ssd:"nv2-1tb",case:"4000d"};
+const lv=(o,l)=>checkBuild(build({...base,...o})).issues.some(i=>i.level===l);
+let r=checkBuild(build(base));assert(r.complete&&r.status==="green","valid build");
+assert(lv({motherboard:"asrock-b650m"},"red"),"socket mismatch");
+assert(lv({ram:"kf-32-d5"},"red"),"DDR mismatch");
+assert(lv({motherboard:"asus-tuf-b650",cpu:"r5-7600",ram:"kf-32-d5",case:"q300l"},"red"),"ATX in mATX case");
+assert(lv({cooler:"nh-d15",case:"q300l"},"red"),"cooler too tall");
+assert(lv({gpu:undefined},"red"),"no display output");
+assert(lv({gpu:"rx-7800xt",psu:"mwe550"},"red"),"PSU below GPU rec");
+assert(lv({cpu:"i5-14400f",motherboard:"msi-b660m-a"},"yellow"),"BIOS warning");
+assert(!checkBuild(build({...base,case:undefined})).complete,"incomplete");
+Object.values(P).flat().forEach(p=>assert(!("price"in p),"no prices in specs"));
+console.log("all tests passed");

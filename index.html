@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PC Builder Arcade - choose PC components, check compatibility and calculate your budget.">
+    <title>PC Builder Arcade</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="builder.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <a href="#" class="logo">▣ PC BUILDER</a>
+
+        <div class="nav-links">
+            <a href="#pc-builder-2d">BUILD PC</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-icon">🖥️</div>
+        <h1 class="pixel-font">PC BUILDER</h1>
+        <h2 class="pixel-font">FROM IDEA TO BUILD-READY HARDWARE</h2>
+        <p>Choose your components. Calculate your budget. Build your dream PC.</p>
+        <a href="#pc-builder-2d" class="start-button">START BUILDING ▶</a>
+    </section>
+
+
+    <!-- INTERACTIVE 2D PC BUILDER -->
+    <section id="pc-builder-2d" class="pb panel">
+        <h2 class="section-title">▶ INTERACTIVE 2D PC BUILDER</h2>
+        <p class="note">Click a part in the PC (or a category on the left), then pick a product. Red outlines mark conflicting parts.</p>
+        <div class="pb-grid">
+            <div id="pb-tabs" class="pb-tabs"></div>
+            <div>
+                <svg id="pb-svg" viewBox="0 0 420 460" role="img" aria-label="Interactive PC interior"></svg>
+                <div id="pb-total"></div>
+            </div>
+            <div>
+                <div id="pb-products"></div>
+                <h3 class="section-title">▶ COMPATIBILITY</h3>
+                <div id="pb-status" aria-live="polite"></div>
+            </div>
+        </div>
+    </section>
+
+
+   
+
+    
+    <!-- BUILD SUMMARY -->
+    <section id="pb-summary" class="pb pbs panel">
+        <h2 class="section-title">▶ BUILD SUMMARY</h2>
+        <div class="pbs-stats">
+            <div class="pbs-stat"><small>Total price</small><b id="pbs-total">—</b></div>
+            <div class="pbs-stat"><small>Estimated component power</small><b id="pbs-power">—</b></div>
+            <div class="pbs-stat"><small>Suggested PSU (25% headroom)</small><b id="pbs-psu">—</b></div>
+        </div>
+        <div id="pbs-alert" class="pbs-alert" aria-live="polite"></div>
+        <ul id="pbs-issues"></ul>
+        <table class="pbs-table">
+            <thead><tr><th>Part</th><th>Selected product</th><th>Price</th></tr></thead>
+            <tbody id="pbs-parts"></tbody>
+        </table>
+        <p class="note">Printed on <span id="pbs-date"></span>. Prices shown only where verified; "Price unavailable" parts are not in the total.</p>
+        <div class="no-print"><button id="pbs-print" type="button">PRINT SUMMARY</button></div>
+        <p class="pbs-credit">For Educational Purposes.</p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p class="pixel-font">PC BUILDER ARCADE</p>
+        <p>Computer Fundamentals &amp; Programming Project</p>
+        <p>HTML • CSS • JavaScript</p>
+    </footer>
+
+    <script src="products.js"></script>
+    <script src="prices.js"></script>
+    <script src="compat.js"></script>
+    <script src="builder.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+.pb{max-width:1150px;margin:30px auto;padding:25px 20px}
+.pb-grid{display:grid;grid-template-columns:200px 1fr 340px;gap:20px;align-items:start}
+.pb button{margin:0;box-shadow:none;transform:none;transition:none}
+.pb-tabs{display:flex;flex-direction:column;gap:6px}
+.pb .pb-tab{text-align:left;background:var(--background);color:var(--muted);border:2px solid var(--border);padding:8px 10px;font-size:11px;font-weight:normal}
+.pb .pb-tab b{display:block;color:var(--cyan);font-size:12px}
+.pb .pb-tab span{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pb .pb-tab.act{border-color:var(--yellow)}
+.pb .pb-tab.bad{border-color:var(--pink)}
+.pb .pb-tab:hover{background:#1d2347}
+#pb-svg{width:100%;height:auto;background:var(--background);border:2px solid var(--border)}
+#pb-total{margin-top:12px;font-size:14px;color:var(--muted)}
+#pb-total b{color:var(--green);font-size:20px}
+#pb-total small{display:block;margin:4px 0 8px}
+#pb-total button,.pb-card button{background:var(--green);color:#0b1020;border:2px solid #4f9820;padding:7px 10px;font:900 11px 'Courier New',monospace;cursor:pointer;margin-top:6px}
+.pb-card{display:flex;gap:10px;padding:10px;margin-bottom:8px;background:var(--background);border:2px solid var(--border);font-size:12px}
+.pb-card.on{border-color:var(--cyan)}
+.pb-card small{display:block;color:var(--muted);margin-top:3px;line-height:1.4}
+.pb-card .pb-na{color:var(--yellow)}
+.pb-card a{color:var(--cyan)}
+.pb-img{flex:0 0 56px;height:56px;display:grid;place-items:center;border:1px dashed var(--border);color:var(--muted);font-size:9px;text-align:center}
+.pb-img img{max-width:100%;max-height:100%}
+#pb-products{max-height:420px;overflow:auto;margin-bottom:15px}
+.pb-banner{padding:10px;font-weight:bold;font-size:13px;border:2px solid;margin-bottom:8px}
+.pb-banner.green{color:var(--green);border-color:var(--green)}
+.pb-banner.yellow{color:var(--yellow);border-color:var(--yellow)}
+.pb-banner.red{color:var(--pink);border-color:var(--pink)}
+.pb-issue{font-size:12px;line-height:1.5;padding:6px 8px;margin-bottom:5px;border-left:4px solid}
+.pb-issue.green{border-color:var(--green);color:var(--muted)}
+.pb-issue.yellow{border-color:var(--yellow)}
+.pb-issue.red{border-color:var(--pink)}
+@media(max-width:900px){.pb-grid{grid-template-columns:1fr}.pb-tabs{display:grid;grid-template-columns:1fr 1fr}}
+
+
+.pb-part{cursor:pointer}
+.pb-part .art{opacity:.3}
+.pb-part.on .art{opacity:1}
+.pb-part .hit{fill:rgba(0,0,0,0);stroke:var(--border);stroke-width:1;stroke-dasharray:4 3}
+.pb-part.on .hit{stroke:none}
+.pb-part:hover .hit{fill:rgba(255,217,0,.12);stroke:var(--yellow)}
+.pb-part.act .hit{stroke:var(--yellow);stroke-dasharray:none;stroke-width:2}
+.pb-part.bad .hit{stroke:var(--pink);stroke-dasharray:none;stroke-width:3}
+.pb-part .gh{fill:var(--muted);font:8px 'Courier New',monospace;text-anchor:middle;dominant-baseline:middle;pointer-events:none}
+.ring{fill:#0b0f20;stroke:#4b5a8c;stroke-width:2}.bl{fill:#5b6ba3}.hub{fill:#e8ecff}
+
+.pbs-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:14px}
+.pbs-stat{background:var(--background);border:2px solid var(--border);padding:14px}
+.pbs-stat small{display:block;color:var(--muted);font-size:12px;margin-bottom:6px}
+.pbs-stat b{font-size:20px;color:var(--cyan)}
+.pbs-alert{padding:14px;border:2px solid;font-weight:bold;font-size:14px;margin-bottom:10px}
+.pbs-alert.green{color:var(--green);border-color:var(--green)}
+.pbs-alert.yellow{color:var(--yellow);border-color:var(--yellow)}
+.pbs-alert.red{color:var(--pink);border-color:var(--pink)}
+#pbs-issues{padding-left:22px;margin-bottom:16px;font-size:14px;line-height:1.7}
+.pbs-table{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:10px}
+.pbs-table th,.pbs-table td{text-align:left;padding:8px;border-bottom:1px solid #303858}
+.pbs-table th{color:var(--cyan)}
+#pbs-print{background:var(--blue,#147db2);color:#fff;border:3px solid #07557c;padding:12px 16px;font:900 11px 'Courier New',monospace;cursor:pointer;margin:6px 0 14px}
+.pbs-credit{font-size:12px;color:var(--muted);margin-top:8px}
+@media(max-width:700px){.pbs-stats{grid-template-columns:1fr}}
+@media print{
+ #pc-builder-2d,.no-print,.hero,nav{display:none!important}
+ #pb-summary{max-width:100%;margin:0;padding:0;border:0;box-shadow:none;background:#fff}
+ #pb-summary *{color:#000!important;background:transparent!important;border-color:#999!important;text-shadow:none!important}
+}
+.pb-price{color:var(--green)!important;font-size:15px;font-weight:bold}
